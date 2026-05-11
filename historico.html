@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>Historico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="historico.css">
+    
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+
+<header class="navbar">
+        <div class="logo-container">
+        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
+    <h2>Atrasos e <br>Notificações</h2>
+        </div>
+       <!--LINKS DE NAVEGAÇÃO-->
+        <nav>
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i> Início
+    </a>
+    <a href="ocorrencias.html">
+        <i class="fa-solid fa-clipboard-list"></i> Ocorrência
+    </a>
+    <a href="Status-dos-alunos.html">
+        <i class="fa-solid fa-clock-rotate-left"></i> Historico
+    </a>
+    <a href="cadastro.html">
+        <i class="fa-solid fa-user-plus"></i> Cadastrar
+    </a>
+</nav>
+    </header>
+
+    <main class="container dashboard">
+        <section class="card profile-card">
+            <div class="profile-info">
+                <h2>Amanda Oliveira</h2>
+                <p>Turma: <strong>2º ENF</strong> | Curso: <strong>Enfermagem</strong></p>
+                <p>Responsável: — | Telefone: <strong>(85) 99668-2554</strong></p>
+            </div>
+            <span class="badge status-regular">REGULAR</span>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-item orange">
+                <span class="value">0</span>
+                <span class="label">Advertências (mês atual)</span>
+            </div>
+            <div class="stat-item red">
+                <span class="value">1</span>
+                <span class="label">Ocorrências (mês atual)</span>
+            </div>
+            <div class="stat-item dark-red">
+                <span class="value">1/3</span>
+                <span class="label">Total (adv+oco convertidas)</span>
+            </div>
+            <div class="stat-item purple">
+                <span class="value">0</span>
+                <span class="label">Notificações geradas</span>
+            </div>
+        </section>
+
+        <section class="card table-section">
+            <h3>📋 Histórico completo de registros</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Data / Hora</th>
+                            <th>Tipo</th>
+                            <th>Subtipo</th>
+                            <th>Item</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>40</td>
+                            <td>05/05/2026 07:45</td>
+                            <td><span class="badge-type red">Ocorrência</span></td>
+                            <td>Atraso</td>
+                            <td>—</td>
+                            <td><button class="btn-delete">Excluir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card action-section">
+            <h3>📙 Registrar saída antecipada</h3>
+            <div class="action-row">
+                <select>
+                    <option>Selecione o motivo...</option>
+                </select>
+                <button class="btn-submit">Registrar saída</button>
+            </div>
+            <p class="empty-msg">Nenhuma saída registrada.</p>
+        </section>
+    </main>
+
+     <footer class="footer-container">
+    <div class="footer-content">
+        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

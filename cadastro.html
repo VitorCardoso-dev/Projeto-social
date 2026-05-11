@@ -34,58 +34,51 @@
     </header>
 
 
-  <form action="salvar.php" method="POST">
-
-    <div class="input-group">
-      <label>Nome</label>
-      <input type="text" name="nome" required placeholder="seu Nome">
-    </div>
-
-    <div class="input-group">
-      <label>Curso</label>
-      <select name="curso" required>
-        <option value="">Selecione...</option>
-        <option>Informática</option>
-        <option>Administração</option>
-        <option>Enfermagem</option>
-        <option>Finanças</option>
-        <option>Estética</option>
-      </select>
-    </div>
-
-    <div class="input-group">
-      <label>Série</label>
-      <select name="serie" required placeholder="Selecione sua serie">
-        <option value="">Selecione...</option>
-        <option>1º Ano</option>
-        <option>2º Ano</option>
-        <option>3º Ano</option>
-      </select>
-    </div>
-
-    <div class="input-group">
-      <label>CPF</label>
-      <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="Seu CPF">
-    </div>
-
-    <div class="input-group">
-      <label>Nome da Mãe</label>
-      <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome da Mãe">
-    </div>
-
-    <div class="input-group">
-      <label>CPF da Mãe</label>
-      <input type="text" name="cpfMae" id="cpfMae" maxlength="14" required placeholder="CPF da Mãe">
-    </div>
-
-    <div class="input-group">
-      <label>Matrícula</label>
-      <input type="text" name="matricula" required placeholder=" Número da Matricula">
-    </div>
-
-    <button class="btn">Cadastrar Aluno</button>
-
-  </form>
+  <main>
+      <form action="salvar.php" method="POST">
+        <div class="input-group">
+          <label>Nome</label>
+          <input type="text" name="nome" required placeholder="seu Nome">
+        </div>
+        <div class="input-group">
+          <label>Curso</label>
+          <select name="curso" required>
+            <option value="">Selecione...</option>
+            <option>Informática</option>
+            <option>Administração</option>
+            <option>Enfermagem</option>
+            <option>Finanças</option>
+            <option>Estética</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Série</label>
+          <select name="serie" required placeholder="Selecione sua serie">
+            <option value="">Selecione...</option>
+            <option>1º Ano</option>
+            <option>2º Ano</option>
+            <option>3º Ano</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>CPF</label>
+          <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="Seu CPF">
+        </div>
+        <div class="input-group">
+          <label>Nome da Mãe</label>
+          <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome da Mãe">
+        </div>
+        <div class="input-group">
+          <label>CPF da Mãe</label>
+          <input type="text" name="cpfMae" id="cpfMae" maxlength="14" required placeholder="CPF da Mãe">
+        </div>
+        <div class="input-group">
+          <label>Matrícula</label>
+          <input type="text" name="matricula" required placeholder=" Número da Matricula">
+        </div>
+        <button class="btn">Cadastrar Aluno</button>
+      </form>
+  </main>
 </div>
 
  <!--RODAPE-->

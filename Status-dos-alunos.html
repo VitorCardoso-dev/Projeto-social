@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="status-dos-alunos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Status de Aluno</title>
+
+    
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
+    <h2>Atrasos e <br>Notificações</h2>
+</div>
+       <!--LINKS DE NAVEGAÇÃO-->
+        <nav>
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i> Início
+    </a>
+    <a href="ocorrencias.html">
+    <i class="fa-solid fa-clipboard-list"></i> Ocorrência
+
+    </a>
+    <a href="cadastro.html">
+        <i class="fa-solid fa-user-plus"></i> Cadastrar
+    </a>
+</nav>
+    </header>
+    
+
+        <!-- CABEÇLHO -->
+        <div class="header">
+            status de aluno
+        </div>
+        <div class="container">
+            
+        <div class="content">
+
+            <!-- ===============================
+                 ESCOLHA DE CURSO E ANO
+            =============================== -->
+            <div class="box">
+
+                <h2>CURSO</h2>
+                <div class="buttons" id="courseButtons">
+                    <button class="active" onclick="selectCourse(this, 'INFORMÁTICA')">INFORMÁTICA</button>
+                    <button onclick="selectCourse(this, 'FINANÇAS')">FINANÇAS</button>
+                    <button onclick="selectCourse(this, 'ENFERMAGEM')">ENFERMAGEM</button>
+                    <button onclick="selectCourse(this, 'ADMINISTRAÇÃO')">ADMINISTRAÇÃO</button>
+                    <button onclick="selectCourse(this, 'ESTÉTICA')">ESTÉTICA</button>
+                </div>
+
+                <h2>ANO / SÉRIE</h2>
+                <div class="buttons" id="yearButtons">
+                    <button class="active" onclick="selectYear(this, '1º ANO')">1º ano</button>
+                    <button onclick="selectYear(this, '2º ANO')">2º ano</button>
+                    <button onclick="selectYear(this, '3º ANO')">3º ano</button>
+                </div>
+            </div>
+
+            <!-- ===============================
+                 RESUMO DA TURMA
+            =============================== -->
+            <div class="box">
+
+                <button class="info-btn" id="selectedClass">
+                    INFORMÁTICA - 1º ANO
+                </button>
+
+                <div class="stats">
+                    <div>
+                        <h3>40</h3>
+                        <p>Alunos</p>
+                    </div>
+
+                    <div>
+                        <h3 id="totalAdv">0</h3>
+                        <p>Advertência</p>
+                    </div>
+
+                    <div>
+                        <h3 id="totalOco">0</h3>
+                        <p>Ocorrência</p>
+                    </div>
+
+                    <div>
+                        <h3 id="totalNot">0</h3>
+                        <p>Notificação</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LISTA DE ALUNOS -->
+            <h2>
+                Status Disciplinar dos Alunos
+                <input type="text" placeholder="Buscar aluno..." id="searchInput">
+                <span class="toggle" onclick="toggleStudents()">↓</span>
+            </h2>
+
+            <div class="students" id="students">
+                
+            </div>
+
+        </div>
+    </div>
+ <footer class="footer-container">
+    <div class="footer-content">
+        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        /* ===============================
+           VARIÁVEIS PRINCIPAIS
+        =============================== */
+
+        let selectedCourse = 'INFORMÁTICA';
+        let selectedYear = '1º ANO';
+        let opened = true;
+
+        /* 40 nomes fictícios */
+        const names = [
+            'João Silva', 'Maria Souza', 'Carlos Lima', 'Ana Costa',
+            'Pedro Alves', 'Juliana Rocha', 'Lucas Santos', 'Fernanda Melo',
+            'Rafael Gomes', 'Camila Pereira', 'Bruno Nunes', 'Larissa Dias',
+            'Thiago Ribeiro', 'Amanda Freitas', 'Felipe Castro', 'Beatriz Martins',
+            'Daniel Oliveira', 'Patrícia Sousa', 'Gustavo Barbosa', 'Vanessa Pinto',
+            'Mateus Teixeira', 'Sabrina Moraes', 'Renato Cardoso', 'Paula Fernandes',
+            'Vinicius Araujo', 'Natália Lopes', 'Eduardo Vieira', 'Bianca Carvalho',
+            'Leonardo Batista', 'Aline Monteiro', 'Murilo Mendes', 'Gabriela Ramos',
+            'Caio Rezende', 'Yasmin Alves', 'Igor Cunha', 'Priscila Braga',
+            'Samuel Duarte', 'Letícia Moura', 'Diego Sales', 'Helena Prado'
+        ];
+
+        let studentsData = [];
+
+
+        /* ===============================
+           CRIA AS BOLINHAS
+        =============================== */
+        function createDots(quantity) {
+            let html = '';
+
+            for (let i = 1; i <= 3; i++) {
+                html += `<div class="dot ${i <= quantity ? 'active' : ''}"></div>`;
+            }
+
+            return html;
+        }
+
+
+        /* ===============================
+           GERA 40 ALUNOS COM DADOS
+        =============================== */
+        function generateStudents() {
+            studentsData = [];
+
+            for (let i = 0; i < 40; i++) {
+                studentsData.push({
+                    name: names[i],
+                    adv: Math.floor(Math.random() * 4),
+                    oco: Math.floor(Math.random() * 4),
+                    noti: Math.floor(Math.random() * 4)
+                });
+            }
+        }
+
+
+        /* ===============================
+           RENDERIZA OS PERFIS
+        =============================== */
+        function renderStudents() {
+            const container = document.getElementById('students');
+            container.innerHTML = '';
+
+            let totalAdv = 0;
+            let totalOco = 0;
+            let totalNot = 0;
+
+            studentsData.forEach(student => {
+                totalAdv += student.adv;
+                totalOco += student.oco;
+                totalNot += student.noti;
+
+                const card = document.createElement('div');
+                card.className = 'student-card';
+
+                card.innerHTML = `
+                    <div class="top">
+                        <div class="avatar">${student.name.charAt(0)}</div>
+                        <div>
+                            <div class="name">${student.name}</div>
+                            <div class="course">${selectedCourse} - ${selectedYear}</div>
+                        </div>
+                    </div>
+
+                    <div class="status-boxes">
+                        <div class="status-item">
+                            ADV
+                            <div class="dots">${createDots(student.adv)}</div>
+                        </div>
+
+                        <div class="status-item">
+                            OCO
+                            <div class="dots">${createDots(student.oco)}</div>
+                        </div>
+
+                        <div class="status-item">
+                            NOT
+                            <div class="dots">${createDots(student.noti)}</div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="historico-link">
+                            <a href="">HISTÓRICO</a>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            /* Atualiza totais */
+            document.getElementById('totalAdv').textContent = totalAdv;
+            document.getElementById('totalOco').textContent = totalOco;
+            document.getElementById('totalNot').textContent = totalNot;
+        }
+
+
+        /* ===============================
+           ATUALIZA NOME DA TURMA
+        =============================== */
+        function updateClassTitle() {
+            document.getElementById('selectedClass').textContent =
+                `${selectedCourse} - ${selectedYear}`;
+
+            renderStudents();
+        }
+
+
+        /* Selecionar curso */
+        function selectCourse(button, course) {
+            document.querySelectorAll('#courseButtons button')
+                .forEach(btn => btn.classList.remove('active'));
+
+            button.classList.add('active');
+            selectedCourse = course;
+            updateClassTitle();
+        }
+
+
+        /* Selecionar ano */
+        function selectYear(button, year) {
+            document.querySelectorAll('#yearButtons button')
+                .forEach(btn => btn.classList.remove('active'));
+
+            button.classList.add('active');
+            selectedYear = year;
+            updateClassTitle();
+        }
+
+
+        /* ===============================
+           ABRIR / FECHAR LISTA
+        =============================== */
+        function toggleStudents() {
+            const area = document.getElementById('students');
+
+            opened = !opened;
+            area.style.display = opened ? 'grid' : 'none';
+        }
+
+
+        /* ===============================
+           INICIAR SISTEMA
+        =============================== */
+        generateStudents();
+        renderStudents();
+
+    </script>
+   
+</body>
+</html>

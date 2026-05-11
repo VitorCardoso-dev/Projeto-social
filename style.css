@@ -1,0 +1,438 @@
+@charset "utf-8";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Garante que a base de cálculo seja a tela toda */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos (header, main, footer) em coluna */
+    margin: 0;
+}
+
+/* Estilo do Ícone do Menu */
+.menu-icon {
+    cursor: pointer;
+    display: block; /* Visível no PC também */
+    z-index: 1001;
+}
+
+.menu-icon i {
+    font-size: 35px;
+    color:white;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/* Transformando o NAV em uma Barra Lateral (Sidebar) */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Escondido à direita */
+    width: 250px;
+    height: 100vh;
+    background-color:rgba(32, 151, 32, 0.699) ;
+
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Espaço para não cobrir o topo */
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+/* Classe que o JavaScript vai adicionar para abrir */
+#nav-menu.active {
+    right: 0;
+}
+
+/* Estilizando os links dentro da sidebar */
+#nav-menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+
+.navbar{
+    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);    
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+nav a{
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    margin: 5px;
+    margin-right: 10px;
+     border-bottom: 1px solid transparent; /* Linha invisível para evitar "pulo" */
+     transition: 0.3s;
+}
+nav a:hover{
+    border-bottom: 1px solid white;
+    
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.logo-icon {
+    font-size: 40px !important; /* Tamanho grande para o logo */
+    color: white !important;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.1;
+}
+.container{
+    background-color: white;
+    width: 80vw;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #80808040;
+    box-shadow: -2px 7px 20px 8px #80808080;
+}
+.welcome{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.actions{
+    margin-top: 5px;
+    display: flex;
+}
+
+span{
+    color: blue;
+    margin-right:5px;
+    font-size: 17px;
+}
+.action-btn{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: left;
+    padding: 10px;
+    width: 30%;
+    margin-right: 50px;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #80808082;
+    font-size: 17px;
+    transition: 0.3s;
+}
+.action-btn:hover{
+transform: translateY(-3px);
+    border: 1px solid green;
+
+}
+#series{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+#acoes-rapidas{
+    margin-left: 30px;
+    border: 1px solid #8080805c;
+    padding: 10px;
+    border-radius: 10px;
+}
+.stats-grid{
+    margin-top: 10px;
+    display:flex;
+    
+}
+.stat-card{
+    border: 1px solid #8080809c;
+    border-radius: 10px;
+    color: black;
+    background-color:rgb(255 255 255 / 25%);
+    margin-right:30px ;
+    padding: 10px;
+    width: 10%;
+    transition: 0.5s;
+}
+.stat-card:hover{
+    border: 1px solid green;
+    
+}
+#cursos{
+    margin-top: 10px;
+    margin-left: 30px;
+    border: 1px solid #8080805c;
+    padding: 10px;
+    border-radius: 10px;
+}
+.courses-grid{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.course-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 30%;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.course-card:hover{
+    transform:translateY(-3px);
+}
+
+
+
+.info{
+    color: white;
+background: linear-gradient(90deg, #0a192f 0%, #0d3270 50%, #1a5fb4 100%);}
+.enfer{
+    color: white;
+    background: linear-gradient(90deg, #4b0000 0%, #7f0000 50%, #b22222 100%);}
+.admin{
+    color: white;
+background: linear-gradient(90deg, #5c85b5 0%, #80a6d1 50%, #abc8e6 100%);}
+.este{
+    color: white;
+background: linear-gradient(90deg, #9a5663 0%, #b9717e 50%, #d4a5ae 100%);}
+.fin{
+    color: white;
+    background: linear-gradient(90deg, #133a1b 0%, #1e5c2d 50%, #2d8244 100%);
+}
+
+.course-card>i{
+    font-size:1.6em;
+}
+
+.footer-container {
+    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%); 
+    color: #ffffff;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 40px; /* Garante um distanciamento do conteúdo acima */
+    font-size: 15px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.footer-links {
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.turma-detalhes-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fcfcfc; /* Um fundo quase branco para destacar do corpo principal */
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.secao-titulo {
+    
+    margin-bottom: 15px;
+    
+    font-weight: 600;
+}
+
+.resumo-turma-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-resumo-mini {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border:1px solid #80808063;
+}
+.card-resumo-mini:hover{
+    border: 1px solid green;
+}
+.icon-blue {
+    font-size: 30px !important;
+    color:orange !important;
+}
+
+.resumo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumo-valor {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a237e;
+    line-height: 1;
+}
+
+.resumo-label {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+
+/* Container que segura o ícone e os textos */
+.curso-estilo {
+    display: flex;
+    align-items: center; /* Alinha o ícone verticalmente ao centro do bloco de texto */
+    gap: 20px; /* Dá um espaço maior entre o ícone e as letras */
+}
+
+/* O "Pulo do Gato": faz os textos ficarem um embaixo do outro */
+.curso-textos {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+/* Ajuste das fontes para bater com a foto */
+.curso-textos h3 {
+    
+    font-weight: 400;
+    margin: 0;
+    text-transform: capitalize; /* Garante a primeira letra maiúscula */
+}
+
+.curso-textos .numero {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 2px 0;
+}
+
+.curso-textos .legenda {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Tamanho do ícone principal da esquerda */
+.curso-icone-principal {
+    font-size: 45px !important; /* Deixa o ícone do curso em destaque */
+}
+
+/* Card principal */
+.course-card {
+    display: flex;
+    justify-content: space-between; /* Ícone/Texto na esquerda <---> Seta na direita */
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 12px;
+    color: white;
+    min-height: 100px; /* Garante que todos tenham a mesma altura */
+}
+
+/* Estilo da setinha da direita */
+.linkagem i {
+    -webkit-text-stroke-width: 1px; /*expressura da letra/borda */
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.notificacoes-container{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #8080805c;
+}
+.notificacao-card{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: #85858526;
+}
+.notificacao{
+    margin-left: 10px;
+}
+
+.notificacao >p , .curso-link{
+    color:#4c4b4b;;
+}
+
+.horario-atraso{
+    color: red;
+}
+
+.notificacao-status{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.badge.pendente{
+    color: red;
+    font-weight: bold;
+}
+.data-notif{
+    color: gray;
+    font-weight: bold;
+}
+
+.aplicar{
+    text-decoration: none;
+    margin-top: 5px;
+    color: white;
+        background: linear-gradient(90deg, #3db06a 50%, #46bdad 100%);
+         padding: 5px;
+    border-radius: 5px;
+        border: none;
+        
+        transition:0.3s;
+        
+}
+.aplicar:hover{
+    transform:translateY(-2.5px);
+}
+

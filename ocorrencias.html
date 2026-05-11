@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Ocorrências</title>
+  <link rel="stylesheet" href="ocorrencias.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body> 
+
+<!-- CABEÇALHO -->
+
+<header class="navbar">
+        <div class="logo-container">
+        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
+    <h2>Atrasos e <br>Notificações</h2>
+</div>
+       <!--LINKS DE NAVEGAÇÃO-->
+        <nav>
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i> Início
+    </a>
+    <a href="Status-dos-alunos.html">
+        <i class="fa-solid fa-clock-rotate-left"></i> Historico
+    </a>
+    <a href="cadastro.html">
+        <i class="fa-solid fa-user-plus"></i> Cadastrar
+    </a>
+</nav>
+    </header>
+
+<!-- REGISTRO -->
+
+<main>
+  <div class="card">
+    <h1>Registrar Ocorrência</h1>
+
+    <div class="tipo">
+      <div class="box "> Tolerância</div>
+      <div class="box "> Atraso</div>
+      <div class="box "> Fardamento</div>
+    </div>
+
+ <!-- FORMULÁRIO -->
+
+    <form>
+      <label>Aluno:</label>
+      <input type="text" placeholder="Nome do aluno">
+
+ <!-- TURMA -->
+
+      <label>Turma:</label>
+      <select>
+        <options>Selecione a turma...</options>
+        <option>Informática</option>
+        <option>Finanças</option>
+        <option>Enfermagem</option>
+        <option>Estética</option>
+        <option>Administração</option>
+      </select>
+
+  <!-- SÉRIE -->
+
+      <label>Série:</label>
+      <select>
+        <options>Selecione a série...</options>
+        <option>1º Ano</option>
+        <option>2º Ano</option>
+        <option>3º Ano</option>
+      </select>
+
+  <!-- DATA E HORÁRIO -->
+
+      <label>Data da ocorrência:</label>
+      <input type="date">
+      <label>Horário de chegada:</label>
+      <input type="time">
+      <label>Observações</label>
+      <input type="text" name="observacoes" id="observacoes" placeholder="Observações adicionais...">
+     
+
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer-container">
+    <div class="footer-content">
+        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

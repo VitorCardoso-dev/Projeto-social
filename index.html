@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atrasos e notifcações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+        <!--CABEÇALHO-->
+    <header class="navbar">
+        <div class="logo-container">
+        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
+    <h2>Atrasos e <br>Notificações</h2>
+</div>
+       <!--LINKS DE NAVEGAÇÃO-->
+        <nav>
+    <a href="ocorrencias.html">
+        <i class="fa-solid fa-clipboard-list"></i> Ocorrência
+    </a>
+    <a href="Status-dos-alunos.html">
+        <i class="fa-solid fa-clock-rotate-left"></i> Historico
+    </a>
+    <a href="cadastro.html">
+        <i class="fa-solid fa-user-plus"></i> Cadastrar
+    </a>
+</nav>
+    </header>
+
+      <!--CORPO PRINCIPAL-->
+    <main class="container">
+        <section class="welcome">
+            <h1>Bem-vindo(a)!</h1> 
+            <p>Acompanhe os atrasos e notificações da sua escola.</p>
+        </section>
+
+        <!--AÇÕES RAPIDAS-->
+        <div id="acoes-rapidas">
+            <h3>Ações rápidas</h3>
+            
+            <section class="actions">
+            <button class="action-btn">
+        <span class="material-symbols-outlined">person_add</span>
+        Registrar atraso
+    </button>
+    <button class="action-btn">
+        <span class="material-symbols-outlined">send</span>
+        Enviar notificação
+    </button>
+    <button class="action-btn">
+        <span class="material-symbols-outlined">description</span>
+        Gerar relatório
+    </button>
+            </section>
+        </div>
+        
+        <!--CURSOS-->
+        <div id="cursos">
+            <h3>Cursos</h3>
+            <section class="courses-grid">
+    <div class="course-card enfer">
+        <div class="curso-estilo">
+            <i class="material-symbols-outlined">stethoscope</i>
+            <div class="curso-textos">
+                <h3>Enfermagem</h3>
+                <strong>23</strong>
+                <small>atrasos no periodo</small>
+            </div>
+        </div>
+        <div class="linkagem">
+            <a href="Status-dos-alunos.html"><i class="material-symbols-outlined">chevron_right</i></a>
+        </div>
+    </div>
+
+    <div class="course-card info">
+        <div class="curso-estilo">
+            <i class="material-symbols-outlined">laptop_mac</i>
+            <div class="curso-textos">
+                <h3>Informática</h3>
+                <strong>37</strong>
+                <small>atrasos no periodo</small>
+            </div>
+        </div>
+        <div class="linkagem">
+            <a href="Status-dos-alunos.html"><i class="material-symbols-outlined">chevron_right</i></a>
+        </div>
+    </div>
+
+    <div class="course-card admin">
+        <div class="curso-estilo">
+            <i class="material-symbols-outlined">business_center</i>
+            <div class="curso-textos">
+                <h3>Administração</h3>
+                <strong>18</strong>
+                <small>atrasos no periodo</small>
+            </div>
+        </div>
+        <div class="linkagem">
+            <a href="Status-dos-alunos.html"><i class="material-symbols-outlined">chevron_right</i></a>
+        </div>
+    </div>
+
+    <div class="course-card este">
+        <div class="curso-estilo">
+            <i class="material-symbols-outlined">spa</i>
+            <div class="curso-textos">
+                <h3>Estética</h3>
+                <strong>12</strong>
+                <small>atrasos no periodo</small>
+            </div>
+        </div>
+        <div class="linkagem">
+            <a href="Status-dos-alunos.html"><i class="material-symbols-outlined">chevron_right</i></a>
+        </div>
+    </div>
+
+    <div class="course-card fin">
+        <div class="curso-estilo">
+            <i class="material-symbols-outlined">payments</i>
+            <div class="curso-textos">
+                <h3>Finanças</h3>
+                <strong>15</strong>
+                <small>atrasos no periodo</small>
+            </div>
+        </div>
+        <div class="linkagem">
+            <a href="Status-dos-alunos.html"><i class="material-symbols-outlined">chevron_right</i></a>
+        </div>
+    </div>
+</section>
+        </div>
+
+            <!--SERIES-->
+        <!-- <div id="series">
+            <h3>Series</h3>
+            <section class="stats-grid">
+            
+                <div class="stat-card">
+                    <p>1ºano</p>
+                </div>
+                <div class="stat-card">
+                    <p>2ºano</p>
+                </div>
+                <div class="stat-card">
+                    <p>3ºano</p>
+                </div>
+            </section>
+        </div> -->
+
+            <!--VISÃO GERAL-->
+        <div class="turma-detalhes-container">
+    <h3 class="secao-titulo">visão geral</h3>
+    <div class="resumo-turma-grid">
+        
+        <div class="card-resumo-mini">
+            <span class="material-symbols-outlined icon-blue">group</span>
+            <div class="resumo-texto">
+                <span class="resumo-valor">12</span>
+                <span class="resumo-label">Atrasos hoje</span>
+            </div>
+        </div>
+
+        <div class="card-resumo-mini">
+            <span class="material-symbols-outlined icon-blue">notifications</span>
+            <div class="resumo-texto">
+                <span class="resumo-valor">05</span>
+                <span class="resumo-label">Notificações</span>
+            </div>
+        </div>
+
+        <div class="card-resumo-mini">
+            <span class="material-symbols-outlined icon-blue">warning</span>
+            <div class="resumo-texto">
+                <span class="resumo-valor">02</span>
+                <span class="resumo-label">Ocorrências</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="notificacoes-container">
+    <h2>Notificações recentes</h2>
+
+
+    <div class="notificacao-card">
+        <div class="notificacao">
+            <h3>João da Silva</h3>
+            <p><span class="curso-link">Informática</span> • 3º INFO</p>
+            <span class="horario-atraso">Atraso: 08:15</span>
+        </div>
+
+        <div class="notificacao-status">
+            <span class="badge pendente">Pendente</span>
+            <span class="data-notif">Horario pendente</span>
+            <a href="" class="aplicar">Aplicar notificação </a>
+        </div>
+    </div>
+</section>
+        </main>
+
+        <!--RODAPE-->
+   
+<footer class="footer-container">
+    <div class="footer-content">
+        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Aluno</title>
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+</head>
+
+<body>
+
+<!--CABEÇALHO-->
+    <header class="navbar">
+        <div class="logo-container">
+        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
+    <h2>Atrasos e <br>Notificações</h2>
+</div>
+       <!--LINKS DE NAVEGAÇÃO-->
+        <nav>
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i> Início
+    </a>
+    <a href="ocorrencias.html">
+        <i class="fa-solid fa-clipboard-list"></i> Ocorrência
+    </a>
+    <a href="Status-dos-alunos.html">
+        <i class="fa-solid fa-clock-rotate-left"></i> Historico
+    </a>
+    
+</nav>
+    </header>
+
+
+  <form action="salvar.php" method="POST">
+
+    <div class="input-group">
+      <label>Nome</label>
+      <input type="text" name="nome" required placeholder="seu Nome">
+    </div>
+
+    <div class="input-group">
+      <label>Curso</label>
+      <select name="curso" required>
+        <option value="">Selecione...</option>
+        <option>Informática</option>
+        <option>Administração</option>
+        <option>Enfermagem</option>
+        <option>Finanças</option>
+        <option>Estética</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Série</label>
+      <select name="serie" required placeholder="Selecione sua serie">
+        <option value="">Selecione...</option>
+        <option>1º Ano</option>
+        <option>2º Ano</option>
+        <option>3º Ano</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>CPF</label>
+      <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="Seu CPF">
+    </div>
+
+    <div class="input-group">
+      <label>Nome da Mãe</label>
+      <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome da Mãe">
+    </div>
+
+    <div class="input-group">
+      <label>CPF da Mãe</label>
+      <input type="text" name="cpfMae" id="cpfMae" maxlength="14" required placeholder="CPF da Mãe">
+    </div>
+
+    <div class="input-group">
+      <label>Matrícula</label>
+      <input type="text" name="matricula" required placeholder=" Número da Matricula">
+    </div>
+
+    <button class="btn">Cadastrar Aluno</button>
+
+  </form>
+</div>
+
+ <!--RODAPE-->
+   
+<footer class="footer-container">
+    <div class="footer-content">
+        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Contato</a>
+        </div>
+    </div>
+</footer>
+<script>
+const cpf = document.getElementById('cpf');
+const cpfMae = document.getElementById('cpfMae');
+
+cpf.addEventListener('input', function(e) {
+  let v = e.target.value.replace(/\D/g,'');
+
+  v = v.replace(/(\d{3})(\d)/, '$1.$2');
+  v = v.replace(/(\d{3})(\d)/, '$1.$2');
+  v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+
+  e.target.value = v;
+});
+
+cpfMae.addEventListener('input', function(e) {
+  let v = e.target.value.replace(/\D/g,'');
+
+  v = v.replace(/(\d{3})(\d)/, '$1.$2');
+  v = v.replace(/(\d{3})(\d)/, '$1.$2');
+  v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+
+  e.target.value = v;
+});
+</script>
+
+</body>
+</html>

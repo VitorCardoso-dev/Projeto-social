@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 
 * {
@@ -15,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Margem de segurança para telas pequenas */
+    padding: 20px; /* Margem de seguranÃ§a para telas pequenas */
 }
 
 main {
@@ -27,10 +28,9 @@ main {
 
 
 .container {
-
+    background: linear-gradient(135deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);
     color: white;
     font-weight: bolder;
-    background: linear-gradient(135deg, #007300, #00800066, #38b0005c, #70e0001f);    
     width:50vw;
     display: flex;
     flex-direction: column;
@@ -148,13 +148,13 @@ input:focus::placeholder{
         color: white;
         border: 1px solid #3e57e0;
     }
-/* --- AJUSTES DE RESPONSIVIDADE (O QUE VOCÊ PRECISA) --- */
+/* --- AJUSTES DE RESPONSIVIDADE (O QUE VOCÃŠ PRECISA) --- */
 
 @media (max-width: 850px) {
     main {
         flex-direction: column; /* Empilha o texto e o form */
         width: 100%;
-        max-width: 450px; /* Limita a largura no celular para não ficar esticado demais */
+        max-width: 450px; /* Limita a largura no celular para nÃ£o ficar esticado demais */
     }
 
     .container {
@@ -164,7 +164,7 @@ input:focus::placeholder{
     }
 
     .container > h1 {
-        text-align: center; /* Diminui o título no celular */
+        text-align: center; /* Diminui o tÃ­tulo no celular */
     }
 
     label{

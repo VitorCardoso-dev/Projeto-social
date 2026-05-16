@@ -1,68 +1,116 @@
-@charset "utf-8";
+
         /* ===============================
            RESET GERAL
         =============================== */
-        *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        @charset "utf-8";
 
-    html, body {
-    height: 100%; /* Garante que a base de cálculo seja a tela toda */
-}
-
-    body {
-    display: flex;
-    flex-direction: column; /* Alinha os elementos (header, main, footer) em coluna */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
 }
-        .navbar{
-        background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);    
-        padding: 10px;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 18px;
+
+html, body {
+    height: 100%;
+    background-color: #f8fafc; /* Fundo suave (padrão SaaS moderno) */
+    color: #334155;
 }
-        nav a{
-        color: white;
-        text-decoration: none;
-        font-weight: bolder;
-        margin: 5px;
-        margin-right: 10px;
-        border-bottom: 1px solid transparent; /* Linha invisível para evitar "pulo" */
-        transition: 0.3s;
+
+body {
+    display: flex;
+    flex-direction: column;
 }
-    nav a:hover{
-        border-bottom: 1px solid white;
-        
-    }
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 15px;
-    }
-    .logo-container>h2 {
-        margin-bottom: 0;
-    }
-    .logo{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-    .logo-icon {
-        font-size: 40px !important; /* Tamanho grande para o logo */
-        color: white !important;
-    }
+        .navbar {
+    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);
+    padding: 14px 28px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
 
 .logo-text {
-        color: white;
-        font-weight: 600;
-        line-height: 1.1;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+/* Menu Hamburguer */
+.menu-icon {
+    cursor: pointer;
+    display: block;
+    z-index: 1001;
+    transition: transform 0.2s;
+}
+.menu-icon:hover {
+    transform: scale(1.05);
+}
+.menu-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Links do Nav Principal */
+nav a {
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Sidebar (Menu Lateral) */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #0f172a; /* Dark moderno */
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+#nav-menu.active {
+    right: 0;
+}
+#nav-menu a {
+    padding: 16px 30px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    border-bottom: 1px solid #1e293b;
+    transition: 0.2s;
+}
+#nav-menu a:hover {
+    background-color: #1e293b;
+    color: white;
 }
 
         /* ===============================
@@ -77,15 +125,15 @@
 
         /* Cabeçalho verde */
         .header {
-        background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);            
-        color: white;
-        text-align: center;
-        padding: 22px;
-        font-size: 22px;
-        font-weight: bold;
-        width: 95vw;
-        margin: auto;
-        margin-top: 20px;
+            background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 22px;
+            width: 95vw;
+            font-weight: bold;
+            margin: auto;
+            margin-top: 20px;
         }
 
         .content {
@@ -124,7 +172,7 @@
 
         /* Botão selecionado */
         button.active {
-            background: #ef7f3ae3;
+            background: #ef7f3a;
             border-color: #c95e1d;
             color: white;
         }
@@ -226,25 +274,26 @@
             color: #2f8a45;
             font-weight: bold;
         }
-
-        .historico-link> a {
-            padding: 5px;
-            border: 1px solid orange;
-            border-radius: 5px;
-            background-color: rgb(219, 219, 219);
-            display: inline-block;
+        .historico-link {
             font-size: 13px;
-            margin-top: 10px;
+            margin-top: 15px;
+            
+        }
+        .historico-link> a {
             text-decoration: none;
             color:green;
             font-weight: bold;
-            transition: 0.5s;
+            padding: 5px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-        .historico-link> a:hover{
-            background-color: #ef7f3a;
-            color: white;
-            border:1px solid transparent;
+        .historico-link>a:hover{
+            border: 1px solid transparent;
+            background-color: #4caf50;
+            color:white;
         }
+        
         .dots {
             margin-top: 8px;
             display: flex;
@@ -271,10 +320,10 @@
             font-size: 16px;
             margin-left: 15px;
         }
-.footer-container {
+        .footer-container {
     background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%); 
     color: #ffffff;
-    padding: 10px 0;
+    padding: 24px 0;
     width: 100%;
     margin-top: 40px; /* Garante um distanciamento do conteúdo acima */
     font-size: 15px;
@@ -302,4 +351,41 @@
 .footer-links a:hover {
     text-decoration: underline;
     opacity: 1;
+}
+
+/* ==========================================================================
+   6. CÓDIGO DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablets e Celulares (Até 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    nav {
+        display: none; /* Oculta menu horizontal para usar a sidebar */
+    }
+
+    .container {
+        width: 92vw; /* Ajusta a largura para não esmagar em telas menores */
+        padding: 24px; /* Reduz padding interno para ganhar área útil */
+        margin: 20px auto;
+    }
+    button,button.active {
+    margin: auto;
+    width: 100%;
+    }
+    
+}
+
+/* Celulares muito pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 16px;
+    }
+    
+    .logo-text {
+        font-size: 13px;
+    }
 }

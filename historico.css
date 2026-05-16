@@ -22,21 +22,22 @@
         /* ===============================
            RESET GERAL
         =============================== */
-        *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-    html, body {
-    height: 100%; /* Garante que a base de cálculo seja a tela toda */
-}
-
-    body {
-    display: flex;
-    flex-direction: column; /* Alinha os elementos (header, main, footer) em coluna */
+        * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+}
+
+html, body {
+    height: 100%;
+    background-color: #f8fafc; /* Fundo suave (padrão SaaS moderno) */
+    color: #334155;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -46,42 +47,98 @@
 }
 
 /* Header: Flexbox para alinhar logo à esquerda e menu à direita */
-.navbar{
-        background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);    
-        padding: 10px;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 18px;
+.navbar {
+    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);
+    padding: 14px 28px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-        nav a{
-        color: white;
-        text-decoration: none;
-        font-weight: bolder;
-        margin: 5px;
-        margin-right: 10px;
-        border-bottom: 1px solid transparent; /* Linha invisível para evitar "pulo" */
-        transition: 0.3s;
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-    nav a:hover{
-        border-bottom: 1px solid white;
-        
-    }
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 15px;
-    }
-    .logo-container>h2 {
-        margin-bottom: 0;
-    }
-    .logo{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-text {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+/* Menu Hamburguer */
+.menu-icon {
+    cursor: pointer;
+    display: block;
+    z-index: 1001;
+    transition: transform 0.2s;
+}
+.menu-icon:hover {
+    transform: scale(1.05);
+}
+.menu-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Links do Nav Principal */
+nav a {
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Sidebar (Menu Lateral) */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #0f172a; /* Dark moderno */
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+#nav-menu.active {
+    right: 0;
+}
+#nav-menu a {
+    padding: 16px 30px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    border-bottom: 1px solid #1e293b;
+    transition: 0.2s;
+}
+#nav-menu a:hover {
+    background-color: #1e293b;
+    color: white;
+}
+
     .logo-icon {
         font-size: 40px !important; /* Tamanho grande para o logo */
         color: white !important;
@@ -111,6 +168,7 @@
     padding: 24px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    margin-bottom: 10px;
 }
 
 /* Profile Card: Flexbox para separar texto do badge lateral */
@@ -118,6 +176,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-top:10px;
 }
 
 .badge {
@@ -166,7 +225,7 @@ table {
 }
 
 th { background: #f9fafb; text-align: left; padding: 12px; color: #6b7280; }
-td { padding: 12px; border-bottom: 1px solid var(--border-color); }
+td { padding:20px; border-bottom: 1px solid var(--border-color); }
 
 .badge-type.red { background: var(--status-red); color: white; padding: 2px 8px; border-radius: 4px; }
 
@@ -205,7 +264,7 @@ select {
 .footer-container {
     background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%); 
     color: #ffffff;
-    padding: 10px 0;
+    padding: 24px 0;
     width: 100%;
     margin-top: 40px; /* Garante um distanciamento do conteúdo acima */
     font-size: 15px;
@@ -233,4 +292,29 @@ select {
 .footer-links a:hover {
     text-decoration: underline;
     opacity: 1;
+}
+
+/* Tablets e Celulares (Até 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    nav {
+        display: none; /* Oculta menu horizontal para usar a sidebar */
+    }
+
+    .dashboard{
+        width: 98vw;
+    }
+   
+}
+
+/* Celulares muito pequenos (Até 480px) */
+@media (max-width: 480px) {
+    
+    
+    .logo-text {
+        font-size: 13px;
+    }
 }

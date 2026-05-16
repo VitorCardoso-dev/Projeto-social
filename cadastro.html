@@ -34,52 +34,63 @@
     </header>
 
 
-  <main>
-      <form action="salvar.php" method="POST">
-        <div class="input-group">
-          <label>Nome</label>
-          <input type="text" name="nome" required placeholder="seu Nome">
-        </div>
-        <div class="input-group">
-          <label>Curso</label>
-          <select name="curso" required>
-            <option value="">Selecione...</option>
-            <option>Informática</option>
-            <option>Administração</option>
-            <option>Enfermagem</option>
-            <option>Finanças</option>
-            <option>Estética</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label>Série</label>
-          <select name="serie" required placeholder="Selecione sua serie">
-            <option value="">Selecione...</option>
-            <option>1º Ano</option>
-            <option>2º Ano</option>
-            <option>3º Ano</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label>CPF</label>
-          <input type="text" name="cpf" id="cpf" maxlength="14" required placeholder="Seu CPF">
-        </div>
-        <div class="input-group">
-          <label>Nome da Mãe</label>
-          <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome da Mãe">
-        </div>
-        <div class="input-group">
-          <label>CPF da Mãe</label>
-          <input type="text" name="cpfMae" id="cpfMae" maxlength="14" required placeholder="CPF da Mãe">
-        </div>
-        <div class="input-group">
-          <label>Matrícula</label>
-          <input type="text" name="matricula" required placeholder=" Número da Matricula">
-        </div>
-        <button class="btn">Cadastrar Aluno</button>
-      </form>
-  </main>
-</div>
+  <form action="salvar.php" method="POST">
+
+    <div class="input-group">
+      <label>Nome</label>
+      <input type="text" name="nome" required placeholder="Seu nome completo">
+    </div>
+
+    <div class="input-group">
+      <label>E-mail</label>
+      <input type="email" name="email" required placeholder="exemplo@email.com">
+    </div>
+
+    <div class="input-group">
+      <label>Curso</label>
+      <select name="curso" required>
+        <option value="">Selecione...</option>
+        <option value="Informatica">Informática</option>
+        <option value="Administracao">Administração</option>
+        <option value="Enfermagem">Enfermagem</option>
+        <option value="Financas">Finanças</option>
+        <option value="Estetica">Estética</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Série</label>
+      <select name="serie" required>
+        <option value="">Selecione...</option>
+        <option value="1_ano">1º Ano</option>
+        <option value="2_ano">2º Ano</option>
+        <option value="3_ano">3º Ano</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>CPF</label>
+      <input type="text" name="cpf" id="cpf" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+    </div>
+
+    <div class="input-group">
+      <label>Nome da Mãe</label>
+      <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome completo da mãe">
+    </div>
+
+    <div class="input-group">
+      <label>CPF da Mãe</label>
+      <input type="text" name="cpfMae" id="cpfMae" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+    </div>
+
+    <div class="input-group">
+      <label>Matrícula</label>
+      <input type="text" name="matricula" required placeholder="Número da matrícula">
+    </div>
+
+    <button class="btn">Cadastrar Aluno</button>
+
+</form>
 
  <!--RODAPE-->
    

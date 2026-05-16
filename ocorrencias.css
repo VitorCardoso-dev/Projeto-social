@@ -1,67 +1,115 @@
 @charset "utf-8";
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
 }
 
 html, body {
-    height: 100%; /* Garante que a base de cálculo seja a tela toda */
+    height: 100%;
+    background-color: #f8fafc; /* Fundo suave (padrão SaaS moderno) */
+    color: #334155;
 }
 
 body {
     display: flex;
-    flex-direction: column; /* Alinha os elementos (header, main, footer) em coluna */
-    margin: 0;
+    flex-direction: column;
 }
 
-.navbar{
-    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);    
-    padding: 10px;
+.navbar {
+    background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%);
+    padding: 14px 28px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-nav a{
-    
-    color: white;
-    text-decoration: none;
-    font-weight: bolder;
-    margin: 5px;
-    margin-right: 10px;
-     border-bottom: 1px solid transparent; /* Linha invisível para evitar "pulo" */
-     transition: 0.3s;
-}
-nav a:hover{
-    border-bottom: 1px solid white;
-    
-}
+
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 15px;
+    gap: 12px;
 }
 
-.logo-icon {
-    font-size: 40px !important; /* Tamanho grande para o logo */
-    color: white !important;
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo-text {
     color: white;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 1.1;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
-.logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+
+/* Menu Hamburguer */
+.menu-icon {
+    cursor: pointer;
+    display: block;
+    z-index: 1001;
+    transition: transform 0.2s;
 }
+.menu-icon:hover {
+    transform: scale(1.05);
+}
+.menu-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Links do Nav Principal */
+nav a {
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Sidebar (Menu Lateral) */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #0f172a; /* Dark moderno */
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+#nav-menu.active {
+    right: 0;
+}
+#nav-menu a {
+    padding: 16px 30px;
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    border-bottom: 1px solid #1e293b;
+    transition: 0.2s;
+}
+#nav-menu a:hover {
+    background-color: #1e293b;
+    color: white;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -73,7 +121,7 @@ main {
     box-shadow: -2px 4px 8px 3px #5555557d;
     padding: 10px;
     border-radius: 15px;
-    width: 600px;
+    width:50vw;
 }
 
 .tipo {
@@ -138,7 +186,7 @@ button:hover{
 .footer-container {
     background: linear-gradient(90deg, #1fa43b 0%, #3db06a 50%, #46bdad 100%); 
     color: #ffffff;
-    padding: 10px 0;
+    padding: 24px 0;
     width: 100%;
     margin-top: auto; /* Garante um distanciamento do conteúdo acima */ /*se o px nao funcionar testa auto. para testar */
     font-size: 15px;
@@ -167,4 +215,35 @@ button:hover{
     text-decoration: underline;
     opacity: 1;
 }
+
+/* ==========================================================================
+   6. CÓDIGO DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablets e Celulares (Até 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    nav {
+        display: none; /* Oculta menu horizontal para usar a sidebar */
+    }
+
+    
+    
+    .card{
+        width: 100vw;
+    }
+}
+
+/* Celulares muito pequenos (Até 480px) */
+@media (max-width: 480px) {
+    
+    
+    .logo-text {
+        font-size: 13px;
+    }
+}
+
 

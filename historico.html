@@ -2,46 +2,58 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=10">
-    <title>Historico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKPEOPLE - Histórico do Aluno</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="historico.css">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- CABEÇALHO -->
-
-<header class="navbar">
-        <div class="logo-container">
-        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
-    <h2>Atrasos e <br>Notificações</h2>
+    <div class="gov-top-bar">
+        <div class="gov-top-left">PROJETO SOCIAL</div>
+        <div class="gov-top-right">
+            <span>Teste</span>
         </div>
-       <!--LINKS DE NAVEGAÇÃO-->
-        <nav>
-    <a href="index.html">
-        <i class="fa-solid fa-house"></i> Início
-    </a>
-    <a href="ocorrencias.html">
-        <i class="fa-solid fa-clipboard-list"></i> Ocorrência
-    </a>
-    <a href="Status-dos-alunos.html">
-        <i class="fa-solid fa-clock-rotate-left"></i> Historico
-    </a>
-    <a href="cadastro.html">
-        <i class="fa-solid fa-user-plus"></i> Cadastrar
-    </a>
-</nav>
-    </header>
+    </div>
 
-    <main class="container dashboard">
+    <header class="main-header-banner">
+    <div class="seduc-centered-branding">
+        <div class="seduc-logo-text"><span style="color: rgb(241, 171, 8);">CHECK</span>PEOPLE</div>
+        <div class="seduc-shield-separator"></div>
+        <div class="seduc-institution-titles">
+            <h1>SISTEMA DE GESTÃO E FLUXO DE PESSOAS</h1>
+            <h2>Monitoramento de Frequência e Ocorrências</h2>
+        </div>
+    </div>
+</header>
+
+    <div class="stripe-decorator-container">
+        <div class="stripe-piece orange"></div>
+        <div class="stripe-piece cyan"></div>
+        <div class="stripe-piece green"></div>
+    </div>
+
+    <nav class="navigation-bar-row">
+        <div class="nav-links-wrapper">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <span class="bar-divider">|</span>
+            <a href="ocorrencias.html"><i class="fa-solid fa-clipboard-list"></i> Registro</a>
+            <span class="bar-divider">|</span>
+            <a href="Status-dos-alunos.html"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</a>
+            <span class="bar-divider">|</span>
+            <a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Cadastrar</a>
+        </div>
+    </nav>
+    
+
+    <main class="container">
+        
         <section class="card profile-card">
             <div class="profile-info">
                 <h2>Amanda Oliveira</h2>
                 <p>Turma: <strong>2º ENF</strong> | Curso: <strong>Enfermagem</strong></p>
                 <p>Responsável: — | Telefone: <strong>(85) 99668-2554</strong></p>
             </div>
-            <span class="badge status-regular">REGULAR</span>
+            <span class="badge status-regular">EDITAR</span>
         </section>
 
         <section class="stats-grid">
@@ -64,7 +76,7 @@
         </section>
 
         <section class="card table-section">
-            <h3>📋 Histórico completo de registros</h3>
+            <h3><i class="fa-solid fa-list-check"></i> Histórico completo de registros</h3>
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -92,27 +104,31 @@
         </section>
 
         <section class="card action-section">
-            <h3>📙 Registrar saída antecipada</h3>
+            <h3><i class="fa-solid fa-door-open"></i> Registrar saída antecipada</h3>
             <div class="action-row">
                 <select>
                     <option>Selecione o motivo...</option>
+                    <option>Mal-estar / Problema de saúde</option>
+                    <option>Consulta médica agendada</option>
+                    <option>Assuntos familiares</option>
+                    <option>Outros motivos</option>
                 </select>
                 <button class="btn-submit">Registrar saída</button>
             </div>
-            <p class="empty-msg">Nenhuma saída registrada.</p>
+            <p class="empty-msg">Nenhuma saída registrada hoje.</p>
         </section>
     </main>
 
-     <footer class="footer-container">
-    <div class="footer-content">
-        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="#">Política de Privacidade</a> | 
-            <a href="#">Termos de Uso</a> | 
-            <a href="#">Contato</a>
+    <footer class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2026 EEEP José de Barcelos - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a> | 
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Contato</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

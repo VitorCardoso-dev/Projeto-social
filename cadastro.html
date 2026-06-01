@@ -1,133 +1,204 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Aluno</title>
-  <link rel="stylesheet" href="cadastro.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CHECKPEOPLE - Cadastro de Aluno</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!--CABEÇALHO-->
-    <header class="navbar">
-        <div class="logo-container">
-        <img src="logo-jb.jpg" alt="logo-jb" class="logo">
-    <h2>Atrasos e <br>Notificações</h2>
-</div>
-       <!--LINKS DE NAVEGAÇÃO-->
-        <nav>
-    <a href="index.html">
-        <i class="fa-solid fa-house"></i> Início
-    </a>
-    <a href="ocorrencias.html">
-        <i class="fa-solid fa-clipboard-list"></i> Ocorrência
-    </a>
-    <a href="Status-dos-alunos.html">
-        <i class="fa-solid fa-clock-rotate-left"></i> Historico
-    </a>
-    
-</nav>
-    </header>
-
-
-  <form action="salvar.php" method="POST">
-
-    <div class="input-group">
-      <label>Nome</label>
-      <input type="text" name="nome" required placeholder="Seu nome completo">
-    </div>
-
-    <div class="input-group">
-      <label>E-mail</label>
-      <input type="email" name="email" required placeholder="exemplo@email.com">
-    </div>
-
-    <div class="input-group">
-      <label>Curso</label>
-      <select name="curso" required>
-        <option value="">Selecione...</option>
-        <option value="Informatica">Informática</option>
-        <option value="Administracao">Administração</option>
-        <option value="Enfermagem">Enfermagem</option>
-        <option value="Financas">Finanças</option>
-        <option value="Estetica">Estética</option>
-      </select>
-    </div>
-
-    <div class="input-group">
-      <label>Série</label>
-      <select name="serie" required>
-        <option value="">Selecione...</option>
-        <option value="1_ano">1º Ano</option>
-        <option value="2_ano">2º Ano</option>
-        <option value="3_ano">3º Ano</option>
-      </select>
-    </div>
-
-    <div class="input-group">
-      <label>CPF</label>
-      <input type="text" name="cpf" id="cpf" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-    </div>
-
-    <div class="input-group">
-      <label>Nome da Mãe</label>
-      <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome completo da mãe">
-    </div>
-
-    <div class="input-group">
-      <label>CPF da Mãe</label>
-      <input type="text" name="cpfMae" id="cpfMae" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-    </div>
-
-    <div class="input-group">
-      <label>Matrícula</label>
-      <input type="text" name="matricula" required placeholder="Número da matrícula">
-    </div>
-
-    <button class="btn">Cadastrar Aluno</button>
-
-</form>
-
- <!--RODAPE-->
-   
-<footer class="footer-container">
-    <div class="footer-content">
-        <p>&copy; 2024 Escola Técnica Estadual, todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="#">Política de Privacidade</a> | 
-            <a href="#">Termos de Uso</a> | 
-            <a href="#">Contato</a>
+    <div class="gov-top-bar">
+        <div class="gov-top-left">PROJETO SOCIAL</div>
+        <div class="gov-top-right">
+            <span>Teste</span>
         </div>
     </div>
-</footer>
-<script>
-const cpf = document.getElementById('cpf');
-const cpfMae = document.getElementById('cpfMae');
 
-cpf.addEventListener('input', function(e) {
-  let v = e.target.value.replace(/\D/g,'');
+    <header class="main-header-banner">
+        <div class="seduc-centered-branding">
+            <div class="seduc-logo-text"><span style="color: rgb(241, 171, 8);">CHECK</span>PEOPLE</div>
+            <div class="seduc-shield-separator"></div>
+            <div class="seduc-institution-titles">
+                <h1>SISTEMA DE GESTÃO E FLUXO DE PESSOAS</h1>
+                <h2>Monitoramento de Frequência e Ocorrências</h2>
+            </div>
+        </div>
+    </header>
 
-  v = v.replace(/(\d{3})(\d)/, '$1.$2');
-  v = v.replace(/(\d{3})(\d)/, '$1.$2');
-  v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    <div class="stripe-decorator-container">
+        <div class="stripe-piece orange"></div>
+        <div class="stripe-piece cyan"></div>
+        <div class="stripe-piece green"></div>
+    </div>
 
-  e.target.value = v;
-});
+    <nav class="navigation-bar-row">
+        <div class="nav-links-wrapper">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <span class="bar-divider">|</span>
+            <a href="ocorrencias.html"><i class="fa-solid fa-clipboard-list"></i> Registro</a>
+            <span class="bar-divider">|</span>
+            <a href="Status-dos-alunos.html"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</a>
+            <span class="bar-divider">|</span>
+            <a href="cadastro.html"><i class="fa-solid fa-user-plus"></i> Cadastrar</a>
+        </div>
+    </nav>
 
-cpfMae.addEventListener('input', function(e) {
-  let v = e.target.value.replace(/\D/g,'');
+    <main class="container">
+        <div class="registro-wrapper">
+            
+            <div class="formulario-coluna">
+                <section class="form-card">
+                    <div class="form-header">
+                        <h3 class="secao-titulo"><i class="fa-solid fa-user-plus"></i> Ficha de Registro do Aluno</h3>
+                        <p class="secao-subtitulo">Introduza as informações acadêmicas e os dados de filiação do estudante.</p>
+                    </div>
 
-  v = v.replace(/(\d{3})(\d)/, '$1.$2');
-  v = v.replace(/(\d{3})(\d)/, '$1.$2');
-  v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                    <form action="salvar.php" method="POST" class="form-grid">
+                        
+                        <div class="input-group full-width">
+                            <label>Nome Completo</label>
+                            <input type="text" name="nome" required placeholder="Nome completo do aluno">
+                        </div>
 
-  e.target.value = v;
-});
-</script>
+                        <div class="input-group full-width">
+                            <label>E-mail Institucional / Contacto</label>
+                            <input type="email" name="email" required placeholder="exemplo@email.com">
+                        </div>
 
+                        <div class="input-group">
+                            <label>Curso / Eixo Tecnológico</label>
+                            <select name="curso" required>
+                                <option value="">Selecione...</option>
+                                <option value="Informatica">Informática</option>
+                                <option value="Administracao">Administração</option>
+                                <option value="Enfermagem">Enfermagem</option>
+                                <option value="Financas">Finanças</option>
+                                <option value="Estetica">Estética</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Série / Ano Letivo</label>
+                            <select name="serie" required>
+                                <option value="">Selecione...</option>
+                                <option value="1_ano">1º Ano</option>
+                                <option value="2_ano">2º Ano</option>
+                                <option value="3_ano">3º Ano</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>CPF do Aluno</label>
+                            <input type="text" name="cpf" id="cpf" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Nº de Matrícula</label>
+                            <input type="text" name="matricula" required placeholder="Número da matrícula institucional">
+                        </div>
+
+                        <div class="input-group full-width" style="margin-top: 10px; border-top: 1px dashed #e2e8f0; padding-top: 15px;">
+                            <label>Nome Completo da Mãe / Responsável</label>
+                            <input type="text" name="NomeMae" id="NomeMae" required placeholder="Nome completo da mãe">
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>CPF da Mãe / Responsável</label>
+                            <input type="text" name="cpfMae" id="cpfMae" class="cpf-mask" maxlength="14" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                        </div>
+
+                        <div class="btn-container">
+                            <button type="submit" class="btn">
+                                <i class="fa-solid fa-circle-check"></i> Finalizar Cadastro do Aluno
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fa-solid fa-trash-can"></i> Limpar Dados inseridos
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+            </div>
+
+            <aside class="info-coluna">
+                <h3><i class="fa-solid fa-circle-info"></i> Cadastro do Estudante</h3>
+                <p>
+                    Utilize este formulário para realizar a inclusão de novos alunos na base de dados institucional da escola técnica.
+                    <br><br>
+                    <strong>Atenção:</strong> Certifique-se de inserir os números de CPF, Matrícula, Nome e CPF da mãe ou responsável corretamente, 
+                    pois estas informações são chaves únicas cruciais para a transmissão de históricos e emissão de Notificações e de frequência.
+                </p>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <p>&copy; 2026 EEEP José de Barcelos - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Suporte</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const cpf = document.getElementById('cpf');
+        const cpfMae = document.getElementById('cpfMae');
+        const formulario = document.querySelector('form'); 
+
+        // [MÁSCARA]: Aplica formatação visual em tempo real no padrão do CPF
+        function aplicarMascaraCPF(e) {
+            let v = e.target.value.replace(/\D/g,'');
+            v = v.replace(/(\d{3})(\d)/, '$1.$2');
+            v = v.replace(/(\d{3})(\d)/, '$1.$2');
+            v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            e.target.value = v;
+        }
+
+        if (cpf) cpf.addEventListener('input', aplicarMascaraCPF);
+        if (cpfMae) cpfMae.addEventListener('input', aplicarMascaraCPF);
+
+        // [ENVIO E FEEDBACK]: Intercepta o clique do formulário, gera a animação verde de sucesso e reseta os campos sem sair da tela
+        if (formulario) {
+            formulario.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const alertaSucesso = document.createElement('div');
+                alertaSucesso.id = 'alerta-sucesso-flutuante';
+                alertaSucesso.innerHTML = `
+                    <div style="position: fixed; top: 30px; right: 30px; background-color: #1fa43b; color: white; padding: 18px 28px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 15px; z-index: 9999; font-weight: 700; font-family: 'Segoe UI', sans-serif; animation: animacaoSurgir 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                        <i class="fa-solid fa-circle-check" style="font-size: 24px;"></i>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Ação Concluída</span>
+                            <span style="font-size: 13px; font-weight: 500; opacity: 0.9;">O cadastro foi processado com sucesso!</span>
+                        </div>
+                    </div>
+                    <style>
+                        @keyframes animacaoSurgir { 
+                            from { transform: translateX(50px); opacity: 0; } 
+                            to { transform: translateX(0); opacity: 1; } 
+                        }
+                    </style>
+                `;
+                
+                document.body.appendChild(alertaSucesso);
+
+                setTimeout(() => {
+                    alertaSucesso.remove();
+                    formulario.reset(); 
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>
